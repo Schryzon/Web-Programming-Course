@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay's Personal Profile</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./scripts/main/script.js" defer></script>
+    <noscript>
+        JavaScript isn't enabled!!!
+    </noscript>
+</head>
+
+<!-- 
+========================================
+Identity:
+Name : Jay (Schryzon)
+Role : Student - Universitas Mataram
+Project : HTML5 Personal Profile Page
+========================================
+-->
+
+<body>
+
+    <header>
+        <h1>Welcome to Jay's Profile</h1>
+        <p><strong>Aspiring Backend, AI, and DevOps Enthusiast</strong></p>
+    </header>
+
+    <nav>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills Table</a></li>
+            <li><a href="#contact">Contact Form</a></li>
+        </ul>
+    </nav>
+
+    <portfolio>
+        <h2>Portfolio</h2>
+        <ul>
+            <li><a href="https://github.com/Schryzon">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/schryzon">LinkedIn</a></li>
+            <li><a href="https://3dex.studio">My Website</a></li>
+        </ul>
+    </portfolio>
+
+    <main>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <h3>Who am I?</h3>
+            <p>
+                Hello! My name is <strong>Jay</strong>. I am a college student who loves
+                <em>programming, AI engineering, and cloud technology</em>.
+                I enjoy building bots and exploring new technologies.
+            </p>
+
+            <figure>
+                <img src="assets/img/Jay.png" alt="Profile placeholder image of Jay" width="200" height="200">
+                <figcaption>My profile illustration</figcaption>
+            </figure>
+        </section>
+
+        <section id="skills">
+            <h2>Skills Overview</h2>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Skill</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cloud & Sysadmin</td>
+                        <td>Expert</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Backend Development</td>
+                        <td>Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Machine Learning</td>
+                        <td>Intermediate</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form action="#" method="post">
+
+                <p>
+                    <label for="fullname">Full Name:</label><br>
+                    <input type="text" id="fullname" name="fullname" required>
+                </p>
+
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <p>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password">
+                </p>
+
+                <p>
+                    <label for="birthdate">Birth Date:</label><br>
+                    <input type="date" id="birthdate" name="birthdate">
+                </p>
+
+                <p>
+                    <label for="interest">Interest Area:</label><br>
+                    <select id="interest" name="interest">
+                        <option value="ai">AI Engineering</option>
+                        <option value="backend">Backend Development</option>
+                        <option value="cloud">Cloud Computing</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" name="subscribe">
+                        Subscribe to newsletter
+                    </label>
+                </p>
+
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="30"></textarea>
+                </p>
+
+                <p>
+                    <input type="submit" value="Send">
+                    <input type="reset" value="Reset">
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <h2>Footer</h2>
+        <p>&copy; 2026 Jay. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
