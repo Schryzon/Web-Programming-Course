@@ -1,8 +1,8 @@
 /* style.css */
 :root {
-    --bg-color: #f4f6f9;
+    --bg-color: #e1f5fe;
     --text-color: #333;
-    --primary-color: #4a90e2;
+    --primary-color: #7b1fa2;
     --secondary-color: #fff;
     --border-radius: 8px;
 }
@@ -20,7 +20,7 @@ header {
     color: white;
     padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -28,40 +28,46 @@ header h1 {
     font-size: 2.5em;
 }
 
-nav, portfolio {
+nav,
+portfolio {
     display: block;
     text-align: center;
     background-color: var(--secondary-color);
     padding: 15px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-nav h2, portfolio h2 {
+nav h2,
+portfolio h2 {
     margin-top: 0;
     font-size: 1.2em;
     color: var(--primary-color);
 }
 
-nav ul, portfolio ul {
+nav ul,
+portfolio ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-nav li, portfolio li {
+nav li,
+portfolio li {
     display: inline-block;
     margin: 0 15px;
 }
 
-nav a, portfolio a {
+nav a,
+portfolio a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-nav a:hover, portfolio a:hover {
+nav a:hover,
+portfolio a:hover {
     color: var(--primary-color);
 }
 
@@ -76,7 +82,7 @@ section {
     padding: 30px;
     margin-bottom: 30px;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 section h2 {
@@ -93,7 +99,7 @@ figure {
 
 img {
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -108,7 +114,8 @@ table {
     background-color: var(--secondary-color);
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
@@ -150,6 +157,21 @@ textarea {
     font-family: inherit;
 }
 
+/* Example for your style.css */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border: 2px solid var(--primary-color);
+    /* Purple border */
+    background-color: #f3e5f5;
+    /* Very light purple */
+    outline: none;
+}
+
+
 input[type="submit"],
 input[type="reset"] {
     background-color: var(--primary-color);
@@ -168,7 +190,7 @@ input[type="reset"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #357abd;
+    background-color: #4a148c;
 }
 
 input[type="reset"]:hover {
@@ -178,7 +200,7 @@ input[type="reset"]:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #2c3e50;
+    background-color: #4a148c;
     color: white;
     margin-top: 40px;
 }
