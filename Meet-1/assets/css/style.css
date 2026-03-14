@@ -116,6 +116,15 @@ portfolio a:hover {
     text-decoration: underline;
 }
 
+nav a:focus-visible,
+portfolio a:focus-visible,
+.repo-link:focus-visible,
+.theme-toggle-btn:focus-visible {
+    outline: 3px solid #e91e63;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 nav a:active,
 portfolio a:active {
     color: #e91e63;
