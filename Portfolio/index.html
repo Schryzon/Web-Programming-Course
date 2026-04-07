@@ -24,19 +24,19 @@ Project : HTML5 Personal Profile Page
 
 <body>
 
-    <header>
-        <h1>Welcome to Jay's Profile</h1>
+    <header class="glass reveal">
+        <h1>Welcome to <span id="typewriter"></span></h1>
         <p><strong>Aspiring Backend, AI, and DevOps Enthusiast</strong></p>
     </header>
 
-    <nav>
+    <nav class="glass">
         <h2>Navigation</h2>
-        <ul>
-            <li><a href="index.html">Home</a></li>
+        <ul id="main-nav-links">
+            <li><a href="#home" class="active">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="index.html#about">About Me</a></li>
-            <li><a href="index.html#skills">Skills Table</a></li>
-            <li><a href="index.html#contact">Contact Form</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -51,56 +51,50 @@ Project : HTML5 Personal Profile Page
 
     <main>
 
-        <section id="about">
-            <h2>About Me</h2>
+        <section id="about" class="reveal section-padding">
+            <h2 class="section-title">About Me</h2>
             <h3>Who am I?</h3>
-            <p>
-                Hello! My name is <strong>Jay</strong>. I am a college student who loves
-                <em>programming, AI engineering, and cloud technology</em>.
-                I enjoy building bots and exploring new technologies.
-            </p>
+            <div class="about-content">
+                <p>
+                    Hello! My name is <strong>Jay</strong>. I am a college student who loves
+                    <em>programming, AI engineering, and cloud technology</em>.
+                    I enjoy building bots and exploring new technologies.
+                </p>
 
-            <figure>
-                <img src="assets/img/Jay.png" alt="Profile placeholder image of Jay" width="200" height="200">
-                <figcaption>My profile illustration</figcaption>
-            </figure>
+                <figure>
+                    <img src="assets/img/Jay.png" alt="Profile placeholder image of Jay" width="200" height="200">
+                    <figcaption>My profile illustration</figcaption>
+                </figure>
+            </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills Overview</h2>
+        <section id="skills" class="reveal section-padding">
+            <h2 class="section-title">Skills Overview</h2>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Skill</th>
-                        <th>Level</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Cloud & Sysadmin</td>
-                        <td>Expert</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Backend Development</td>
-                        <td>Intermediate</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Machine Learning</td>
-                        <td>Intermediate</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="skill-grid">
+                <div class="skill-card glass" data-level="95">
+                    <h3>Cloud & Sysadmin</h3>
+                    <div class="skill-progress"><div class="progress-bar" style="width: 0%;"></div></div>
+                    <span>Expert</span>
+                </div>
+                <div class="skill-card glass" data-level="75">
+                    <h3>Backend Development</h3>
+                    <div class="skill-progress"><div class="progress-bar" style="width: 0%;"></div></div>
+                    <span>Intermediate</span>
+                </div>
+                <div class="skill-card glass" data-level="70">
+                    <h3>Machine Learning</h3>
+                    <div class="skill-progress"><div class="progress-bar" style="width: 0%;"></div></div>
+                    <span>Intermediate</span>
+                </div>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
+        <section id="contact" class="reveal section-padding">
+            <h2 class="section-title">Contact Me</h2>
 
-            <form action="#" method="post">
+            <form action="#" method="post" id="main-contact-form">
+                <!-- Rest of the form remains same but with better styling classes soon -->
 
                 <p>
                     <label for="fullname">Full Name:</label><br>

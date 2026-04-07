@@ -1,21 +1,45 @@
-/* style.css */
+/* Modern Design Tokens & Glassmorphism */
 :root {
-    --bg-color: #e1f5fe;
-    --text-color: #333;
-    --primary-color: #7b1fa2;
-    --secondary-color: #fff;
-    --border-radius: 8px;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --bg-color: #f8f9fa;
+    --text-color: #2d3436;
+    --primary-color: #6c5ce7;
+    --primary-glow: rgba(108, 92, 231, 0.3);
+    --secondary-color: rgba(255, 255, 255, 0.7);
+    --border-radius: 16px;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.3);
 }
 
-/* Overkill Dark Mode Theme */
 :root.dark-mode {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --primary-color: #bb86fc;
-    /* Neon purple for contrast */
-    --secondary-color: #1e1e1e;
-    --shadow-color: rgba(0, 0, 0, 0.6);
+    --bg-color: #0f172a;
+    --text-color: #f1f5f9;
+    --primary-color: #a78bfa;
+    --primary-glow: rgba(167, 139, 250, 0.3);
+    --secondary-color: rgba(30, 41, 59, 0.7);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --glass-bg: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+}
+
+/* Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Smooth Transitions for Overkill Effect */
@@ -116,19 +140,28 @@ portfolio a:hover {
     text-decoration: underline;
 }
 
-nav a:focus-visible,
-portfolio a:focus-visible,
-.repo-link:focus-visible,
-.theme-toggle-btn:focus-visible {
-    outline: 3px solid #e91e63;
-    outline-offset: 4px;
-    border-radius: 2px;
+nav a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
-nav a:active,
-portfolio a:active {
-    color: #e91e63;
-    /* Pinkish color when clicked */
+#home { 
+    height: 1px;
+    margin-top: -1px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), #fd79a8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 main {
@@ -168,27 +201,81 @@ img:hover {
     transform: scale(1.05);
 }
 
-table {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: var(--secondary-color);
+/* Skill Grid & Cards */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
 }
 
-th,
-td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
+.skill-card {
+    padding: 25px;
+    border-radius: var(--border-radius);
+    text-align: left;
+    transition: transform 0.3s ease;
 }
 
-th {
-    background-color: var(--primary-color);
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-progress {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+:root.dark-mode .skill-progress {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0;
+    transition: width 1.5s ease-out;
+}
+
+.typewriter-cursor {
+    border-right: 2px solid var(--primary-color);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Scroll to Top */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
     color: white;
+    border-radius: 50%;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    z-index: 999;
+    transition: all 0.3s ease;
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+.scroll-top-btn.visible {
+    display: flex;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 form {
