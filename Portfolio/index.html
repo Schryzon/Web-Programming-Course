@@ -26,7 +26,7 @@ Project : HTML5 Personal Profile Page
 
     <header class="glass reveal">
         <h1>Welcome to <span id="typewriter"></span></h1>
-        <p><strong>Aspiring Backend, AI, and DevOps Enthusiast</strong></p>
+        <p id="subtitle"><strong>Aspiring Backend, AI, and DevOps Enthusiast</strong></p>
     </header>
 
     <nav class="glass">
@@ -74,17 +74,23 @@ Project : HTML5 Personal Profile Page
             <div class="skill-grid">
                 <div class="skill-card glass" data-level="95">
                     <h3>Cloud & Sysadmin</h3>
-                    <div class="skill-progress"><div class="progress-bar" style="width: 0%;"></div></div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
                     <span>Expert</span>
                 </div>
                 <div class="skill-card glass" data-level="75">
                     <h3>Backend Development</h3>
-                    <div class="skill-progress"><div class="progress-bar" style="width: 0%;"></div></div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
                     <span>Intermediate</span>
                 </div>
                 <div class="skill-card glass" data-level="70">
                     <h3>Machine Learning</h3>
-                    <div class="skill-progress"><div class="progress-bar" style="width: 0%;"></div></div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
                     <span>Intermediate</span>
                 </div>
             </div>
@@ -99,21 +105,31 @@ Project : HTML5 Personal Profile Page
                 <p>
                     <label for="fullname">Full Name:</label><br>
                     <input type="text" id="fullname" name="fullname" required>
+                    <span class="error-msg" id="fullname-error"></span>
                 </p>
 
                 <p>
                     <label for="email">Email:</label><br>
                     <input type="email" id="email" name="email" required>
+                    <span class="error-msg" id="email-error"></span>
                 </p>
 
                 <p>
                     <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-msg" id="password-error"></span>
+                </p>
+
+                <p>
+                    <label for="phone">Phone Number (10 digits):</label><br>
+                    <input type="tel" id="phone" name="phone" placeholder="0812345678" required>
+                    <span class="error-msg" id="phone-error"></span>
                 </p>
 
                 <p>
                     <label for="birthdate">Birth Date:</label><br>
-                    <input type="date" id="birthdate" name="birthdate">
+                    <input type="date" id="birthdate" name="birthdate" required>
+                    <span class="error-msg" id="birthdate-error"></span>
                 </p>
 
                 <p>
@@ -134,7 +150,8 @@ Project : HTML5 Personal Profile Page
 
                 <p>
                     <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="4" cols="30"></textarea>
+                    <textarea id="message" name="message" rows="4" cols="30" required></textarea>
+                    <span class="error-msg" id="message-error"></span>
                 </p>
 
                 <p>

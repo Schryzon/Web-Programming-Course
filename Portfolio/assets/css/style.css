@@ -2,6 +2,7 @@
 :root {
     --bg-color: #f8f9fa;
     --text-color: #2d3436;
+    --text-muted: #636e72;
     --primary-color: #6c5ce7;
     --primary-glow: rgba(108, 92, 231, 0.3);
     --secondary-color: rgba(255, 255, 255, 0.7);
@@ -9,17 +10,20 @@
     --shadow-color: rgba(0, 0, 0, 0.08);
     --glass-bg: rgba(255, 255, 255, 0.6);
     --glass-border: rgba(255, 255, 255, 0.3);
+    --gradient-end: #fd79a8;
 }
 
 :root.dark-mode {
     --bg-color: #0f172a;
     --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
     --primary-color: #a78bfa;
     --primary-glow: rgba(167, 139, 250, 0.3);
     --secondary-color: rgba(30, 41, 59, 0.7);
     --shadow-color: rgba(0, 0, 0, 0.4);
     --glass-bg: rgba(15, 23, 42, 0.6);
     --glass-border: rgba(255, 255, 255, 0.1);
+    --gradient-end: #ff758c;
 }
 
 .glass {
@@ -54,11 +58,32 @@ textarea,
 select,
 table,
 th,
-td {
+td,
+h1,
+h2,
+h3,
+p,
+a,
+span,
+li,
+label,
+img {
     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
         color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
         border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s ease;
+}
+
+#about h3 {
+    text-align: center;
+}
+
+.about-content {
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 body {
@@ -70,8 +95,6 @@ body {
 }
 
 header {
-    background-color: var(--primary-color);
-    color: white;
     padding: 40px 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -79,11 +102,19 @@ header {
     margin: 20px auto;
     border-radius: var(--border-radius);
     box-sizing: border-box;
+    color: var(--text-color);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
+    color: var(--primary-color);
+    /* Fallback */
+    background: linear-gradient(135deg, var(--primary-color), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 nav,
@@ -145,7 +176,7 @@ nav a.active {
     border-bottom: 2px solid var(--primary-color);
 }
 
-#home { 
+#home {
     height: 1px;
     margin-top: -1px;
 }
@@ -158,7 +189,9 @@ nav a.active {
     font-size: 2.2rem;
     margin-bottom: 40px;
     text-align: center;
-    background: linear-gradient(135deg, var(--primary-color), #fd79a8);
+    color: var(--primary-color);
+    /* Fallback for older browsers */
+    background: linear-gradient(135deg, var(--primary-color), var(--gradient-end));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -245,7 +278,9 @@ img:hover {
 }
 
 @keyframes blink {
-    50% { border-color: transparent; }
+    50% {
+        border-color: transparent;
+    }
 }
 
 /* Scroll to Top */
@@ -274,8 +309,15 @@ img:hover {
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 form {
@@ -294,6 +336,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="date"],
+input[type="tel"],
 select,
 textarea {
     width: 100%;
@@ -308,13 +351,42 @@ textarea {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
+input[type="tel"]:focus,
 input[type="date"]:focus,
 select:focus,
 textarea:focus {
     border: 2px solid var(--primary-color);
-    background-color: #f3e5f5;
-    /* Very light purple */
+    background-color: var(--secondary-color);
     outline: none;
+}
+
+input:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: #ff7675;
+}
+
+.error-msg {
+    color: #ff7675;
+    font-size: 0.85em;
+    display: none;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.error-msg.visible {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -430,14 +502,14 @@ footer h2 {
 .project-card p {
     font-size: 0.95em;
     flex-grow: 1;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 15px;
 }
 
 .project-stats {
     margin-bottom: 15px;
     font-size: 0.85em;
-    color: #888;
+    color: var(--text-muted);
 }
 
 .project-card .repo-link {
